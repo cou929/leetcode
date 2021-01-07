@@ -1,3 +1,4 @@
+// time: O(n*log(n), space: O(1)
 func intersect(nums1 []int, nums2 []int) []int {
     sort.Ints(nums1)
     sort.Ints(nums2)
