@@ -9,3 +9,7 @@
     - golang で言う byte と rune とか、エンコーディングや内部表現の話かと思ったが
     - ascii と unicode では入力の範囲が違うと言うのが言いたかったらしかった
     - hash を使えば関係ない
+- strings は自分で import しないとだめだった
+    - 環境の要件がわからん
+    - help にはバージョンしかない
+        - https://support.leetcode.com/hc/en-us/articles/360011833974-What-are-the-environments-for-the-programming-languages-
