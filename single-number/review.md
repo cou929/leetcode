@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/single-number/description/
+
 - 数学的な解法があるんだろうなと思いつつ普通にやった
 - 数学的な解法
     - `2*(a+b+c)−(a+a+b+b+c)=c`
