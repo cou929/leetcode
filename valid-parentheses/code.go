@@ -6,9 +6,6 @@ func isValid(s string) bool {
 func sol1(s string) bool {
     var stack []rune
     for _, r := range s {
-        if len(stack) > 0 && stack[len(stack)-1] == r {
-
-        }
         switch r {
             case '{', '(', '[':
             var toStack rune
