@@ -1,0 +1,22 @@
+# https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/
+
+- かなり苦戦して、コードはごちゃついている
+- dp (?) で、何を記憶していくかが難しかった
+    - その時点での最適解は局所最適になる
+    - その時点では悪化している候補でも最終的には最適な可能性がある
+- 候補になりうるものはすべて記録していき、都度候補を全探索して最適解を更新していった
+    - なのでこの解放が dp と呼べるのかわからない
+- 候補になりうるもの とは
+    - 他の候補と overlap していない場合
+        - これまでの候補よりも悪化するものは候補に加えなくて良い
+    - overlap している場合
+        - これまでの候補と長さが違うものは候補に入れる
+            - 短いだけじゃなく、長いものも候補に入れないと最適にならない
+                - ex `[2,2,4,4,4,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] target: 20` のケース (best は 23)
+            - 同じ長さのものは、選択肢が増えていないので追加する意味がない
+                - 直感的にそう思っているだけで、本当にそうなのか?
+- discussion
+    - https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/discuss/?currentPage=1&orderBy=most_votes&query=
+    - `map[その要素までの累計] = i` という情報をメモするのがポイントらしい
+        - [prefix sum](https://en.wikipedia.org/wiki/Prefix_sum) というらしい
+        - たしかに今回のように部分配列の合計値を高速に求めることができる (事前計算 o(n) しておけば o(1) になる)
