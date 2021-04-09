@@ -13,4 +13,5 @@
   - append は第一引数の slice の underlying array を拡張しているっぽい
   - 非破壊だと思っていた
   - `fmt.Println((*reflect.SliceHeader)(unsafe.Pointer(&ss)))` みたいな感じでデバッグして気づく
+  - 第一引数には毎回新しいメモリを確保して渡すように変更
   - ここは別途きちんと押さえておく
